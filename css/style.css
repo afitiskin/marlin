@@ -123,7 +123,10 @@ p {margin-bottom: 15px;}
 	.b-logo_alt {visibility: hidden;}
 
 
-.b-calendar {height: 312px;overflow: hidden;}
+.b-calendar {height: 291px;overflow: hidden;}
+	.b-i-calendar {position: relative;overflow: hidden;height: 222px;}
+		.b-i-i-calendar {position: relative;}
+
 	.b-calendar_months {height: 40px;overflow: hidden;}
 		.b-calendar_months_item {float: left;background: rgba(237, 30, 121, .2);font-size: 11px;line-height: 10px;margin: 0;padding: 15px 22px;}
 		/*.b-calendar_months_item {background: url(../images/calendar-months-bg-inactive.png);}*/
@@ -145,16 +148,18 @@ p {margin-bottom: 15px;}
 		.b-calendar_week_day {width: 113px;padding: 12px 10px 5px;float: left;position: relative;border-right: 1px solid #fff;border-bottom: 1px solid #fff;background: rgba(255, 255, 255, .75);cursor: pointer;}
 			/*.b-calendar_week_day {background: url(../images/calendar-months-bg-active.png);}*/
 
+			.b-calendar_week_day_inactive {cursor: default;color: #fff;}
+			.b-calendar_week_day_other {background: rgba(255, 255, 255, .55);}
+
 			.b-calendar_week_day:first-child {width: 133px;}
 			.b-calendar_week_day:last-child {width: 116px;border-right: none;}
 			.b-calendar_week_day_hover {background: #fff;}
-
-			.b-calendar_week_day_inactive {cursor: default;color: #fff;}
 			.b-calendar_week_day_selected {cursor: default;color: #fff;background: #ed1e79;font-weight: bold;}
+
 
 			.b-calendar_week_day_caption {display: none;position: absolute;width: 70px;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;}
 				.b-calendar_week_day_hover .b-calendar_week_day_caption {display: block;}
-			.b-calendar_week_day_flight {display: none;position: absolute;width: 70px;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;white-space: nowrap;letter-spacing: -1px;}
+			.b-calendar_week_day_flight {display: none;position: absolute;width: 90px;overflow: hidden;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;white-space: nowrap;letter-spacing: -1px;}
 				.b-calendar_week_day_selected .b-calendar_week_day_flight {display: block;}
 				.b-calendar_week_day_selected .b-calendar_week_day_caption {display: none;}
 
