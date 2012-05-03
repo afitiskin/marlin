@@ -171,39 +171,6 @@ jQuery.extend( jQuery.easing,
 	}
 });
 
-/*
- *
- * TERMS OF USE - EASING EQUATIONS
- * 
- * Open source under the BSD License. 
- * 
- * Copyright Â© 2001 Robert Penner
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
- * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
- * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
- *
- */
-
 var dateFormat = function () {
 	var	token = /d{1,5}|m{1,5}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
@@ -314,7 +281,7 @@ dateFormat.i18n = {
 	monthNamesAlt: [
 		"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек",
 		"Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
-	],
+	]
 };
 
 // For convenience...
@@ -350,6 +317,9 @@ function prepareCalendar() {
 		var month = document.createElement('LI');
 		$(month).addClass('b-calendar_months_item');
 		$(month).addClass('b-calendar_months_item_' + date.format('mm'));
+		if (i == 11) {
+			$(month).addClass('b-calendar_months_item_last');
+		}
 		$(month).attr('month', date.format('mm'));
 		if (!i) {
 			$(month).addClass('b-calendar_months_item_selected');
@@ -381,8 +351,14 @@ function prepareCalendar() {
 		for (var j = 0; j < 7; j++) {
 			var day = document.createElement('LI');
 			$(day).addClass('b-calendar_week_day');
-			if (j > 4) {
+			if (j == 0) {
+				$(day).addClass('b-calendar_week_day_first');
+			}
+			else if (j > 4) {
 				$(day).addClass('b-calendar_week_day_holyday');
+				if (j == 6) {
+					$(day).addClass('b-calendar_week_day_last');
+				}
 			}
 			$(day).addClass('js-month_' + date.format('mm'));
 			$(day).addClass('js-day_' + date.format('dd'));
@@ -450,7 +426,6 @@ $(document).ready(function () {
 		$('.b-popup').fadeOut(333);
 		return false;
 	});
-	
 	prepareCalendar();
 	
 	$('.b-popup_content_form_from select').change(function () {
