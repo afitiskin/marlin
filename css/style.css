@@ -142,7 +142,7 @@ p {margin-bottom: 15px;}
 	.b-calendar_months {height: 40px;overflow: hidden;}
 		.ie7 .b-calendar_months, .ie8 .b-calendar_months {zoom: 1;position: relative;height: 39px;}
 
-		.b-calendar_months_item {float: left;background: rgba(237, 30, 121, .2);font-size: 11px;line-height: 10px;margin: 0;padding: 15px 22px;overflow: hidden;}
+		.b-calendar_months_item {float: left;background: rgba(237, 30, 121, .2);font-size: 11px;line-height: 10px;margin: 0;padding: 15px 22px;overflow: hidden;cursor: pointer;}
 			.b-calendar_months_item:hover {background: rgba(237, 30, 121, .37);}
 			.ie7 .b-calendar_months_item, .ie8 .b-calendar_months_item {background: url(../images/calendar-months-bg-inactive.png);}
 			.ie7 .b-calendar_months_item:hover, .ie8 .b-calendar_months_item:hover {background: url(../images/calendar-months-bg-hover.png);}
@@ -164,8 +164,8 @@ p {margin-bottom: 15px;}
 			.b-calendar_months_item:last-child {padding-right: 17px;}
 				.ie7 .b-calendar_months_item_last, .ie8 .b-calendar_months_item_last {padding-right: 15px;}
 
-			.b-calendar_months_item_selected {background: rgba(255, 255, 255, .75);}
-				.ie7 .b-calendar_months_item_selected, .ie8 .b-calendar_months_item_selected {background: url(../images/calendar-months-bg-active.png);}
+			.b-calendar_months_item_selected, .b-calendar_months_item_selected:hover {background: rgba(255, 255, 255, .75);}
+				.ie7 .b-calendar_months_item_selected, .ie8 .b-calendar_months_item_selected, .ie7 .b-calendar_months_item_selected:hover, .ie8 .b-calendar_months_item_selected:hover {background: url(../images/calendar-months-bg-active.png);}
 
 		.b-calendar_months_item a {text-decoration: none;border-bottom: 1px dotted;}
 			.b-calendar_months_item_selected a {text-decoration: none;border-bottom: none;color: #29364a;}
