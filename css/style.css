@@ -82,9 +82,9 @@ body {margin:0px; padding:0px;height: 100%;}
 
 body {position:relative;background: #fff;color: #29364a;font-size: 13px;line-height: 19px;font-family: 'SegoeUI',arial,sans-serif;}
 
-h1 {font-weight: 200;text-transform: uppercase;font-size: 37px;line-height: 37px;padding: 25px 0 40px;margin: 0;}
-h2 {font-weight: 200;text-transform: uppercase;font-size: 36px;line-height: 36px;padding: 20px 0 15px;margin: 0;}
-h3 {font-weight: 200;text-transform: uppercase;font-size: 30px;line-height: 30px;padding: 20px 0 15px;margin: 0;}
+h1 {font-weight: 200;text-transform: uppercase;font-size: 37px;line-height: 37px;letter-spacing: 0.07em;padding: 25px 0 40px;margin: 0;}
+h2 {font-weight: 200;text-transform: uppercase;font-size: 36px;line-height: 36px;letter-spacing: 0.07em;padding: 20px 0 15px;margin: 0;}
+h3 {font-weight: 200;text-transform: uppercase;font-size: 30px;line-height: 30px;letter-spacing: 0.07em;padding: 20px 0 15px;margin: 0;}
 p {margin-bottom: 15px;}
 
 .l-wrapper {position: relative;height: 100%;min-width: 1000px;width: 100%;margin: 0 auto;}
@@ -118,7 +118,8 @@ p {margin-bottom: 15px;}
 
 .b-mainmenu {font-size: 13px;line-height: 18px;text-transform: uppercase;float: left;}
 	.b-mainmenu_item {padding: 6px 10px 5px;float: left;position: relative;}
-		.b-mainmenu_item_selected {background: #a4a9b2;}
+		.b-mainmenu_item:hover {background: #a15581;}
+		.b-mainmenu_item_selected, .b-mainmenu_item_selected:hover {background: #a4a9b2;}
 			.b-mainmenu_item_selected_tail {position: absolute;width: 8px;height: 4px;bottom: 0;left: 50%;margin: 0 0 -4px -4px;background: url(../images/sprite.png) no-repeat -49px -89px;}
 				.ie7 .b-mainmenu_item_selected_tail, .ie8 .b-mainmenu_item_selected_tail {zoom: 1;}
 
@@ -134,7 +135,7 @@ p {margin-bottom: 15px;}
 	.b-logo_alt {visibility: hidden;}
 
 
-.b-calendar {height: 291px;overflow: hidden;}
+.b-calendar {height: 291px;overflow: hidden;margin: 0 0 40px;}
 	.b-i-calendar {position: relative;overflow: hidden;height: 222px;}
 		.b-i-i-calendar {position: relative;}
 
@@ -142,7 +143,9 @@ p {margin-bottom: 15px;}
 		.ie7 .b-calendar_months, .ie8 .b-calendar_months {zoom: 1;position: relative;height: 39px;}
 
 		.b-calendar_months_item {float: left;background: rgba(237, 30, 121, .2);font-size: 11px;line-height: 10px;margin: 0;padding: 15px 22px;overflow: hidden;}
+			.b-calendar_months_item:hover {background: rgba(237, 30, 121, .37);}
 			.ie7 .b-calendar_months_item, .ie8 .b-calendar_months_item {background: url(../images/calendar-months-bg-inactive.png);}
+			.ie7 .b-calendar_months_item:hover, .ie8 .b-calendar_months_item:hover {background: url(../images/calendar-months-bg-hover.png);}
 
 			.b-calendar_months_item_01 {width: 36px;}
 			.b-calendar_months_item_02 {width: 44px;}
@@ -182,8 +185,7 @@ p {margin-bottom: 15px;}
 			.ie7 .b-calendar_week_day, .ie8 .b-calendar_week_day {background: url(../images/calendar-months-bg-active.png);}
 
 			.b-calendar_week_day_inactive {cursor: default;color: #fff;}
-			.b-calendar_week_day_holyday {background: rgba(150, 150, 150, .75);} 
-				.ie7 .b-calendar_week_day_holyday, .ie8 .b-calendar_week_day_holyday {background: url(../images/calendar-months-bg-holiday.png);} 
+			.b-calendar_week_day_holyday {color: #c1272d;} 
 			.b-calendar_week_day_other {background: rgba(255, 255, 255, .55);}
 				.ie7 .b-calendar_week_day_other, .ie8 .b-calendar_week_day_other {background: url(../images/calendar-months-bg-other.png);}
 
@@ -211,7 +213,8 @@ p {margin-bottom: 15px;}
 	.b-special_item {display: block;position: relative;text-decoration: none;color: #29364a;padding: 10px;width: 200px;float: left;background: rgba(255, 255, 255, .5);margin: 0 25px 0 0;text-align: center;}
 		.ie7 .b-special_item, .ie8 .b-special_item {background: url(../images/special-bg.png);}
 
-		.b-special_item:hover {color: #29364a;}
+		.b-special_item:hover, .b-special_item_hover {color: #29364a;background: rgba(251, 210, 228, .5)}
+			.ie7 .b-special_item:hover, .ie8 .b-special_item:hover {background: url(../images/special-bg-hover.png);}
 		.b-special_item:last-child {margin: 0;}
 			.ie7 .b-special_item_last, .ie8 .b-special_item_last {margin: 0;}
 
@@ -252,9 +255,9 @@ p {margin-bottom: 15px;}
 		.ie7 .b-about_gallery, .ie8 .b-about_gallery {zoom: 1;position: relative;}
 			
 		.b-about_gallery_item {float: left;width: 90px;height: 90px;overflow: hidden;margin: 0 20px 40px 0;}		
-			.b-about_gallery_item_selected {box-shadow: 0 0 15px rgba(0, 0, 0, .5)}
-				.b-about_gallery_item_selected img {opacity: 0.5;}
-					.ie7 .b-about_gallery_item_selected img, .ie8 .b-about_gallery_item_selected img {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}	
+			.b-about_gallery_item_selected {box-shadow: 0 0 15px rgba(0, 0, 0, .5);position: relative;}
+				.b-about_gallery_item_selected i {display: block;width: 100%;height: 100%;opacity: 0.5;background: #fff;top: 0;left: 0;position: absolute;}
+					.ie7 .b-about_gallery_item_selected i, .ie8 .b-about_gallery_item_selected i {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}	
 			
 .b-links {display: block;overflow: hidden;}
 	.ie7 .b-links, .ie8 .b-links {zoom: 1;}		
@@ -270,7 +273,7 @@ p {margin-bottom: 15px;}
 	.b-appstore {float: right;margin: 40px 0 0 0;background: url(../images/sprite.png) no-repeat -224px 0;width: 142px;height: 46px;}
 	.b-googleplay {float: right;margin: 40px 0 0 10px;background: url(../images/sprite.png) no-repeat -224px -46px;width: 138px;height: 46px;}
 			
-.b-copyrights {text-align: center;padding: 45px 0 0;}
+.b-copyrights {text-align: center;padding: 45px 0 0;font-size: 9px;line-height: 17px;text-transform: uppercase;letter-spacing: .1em;}
 	.ie7 .b-copyrights, .ie8 .b-copyrights {zoom: 1;position: relative;}			
 			
 

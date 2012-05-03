@@ -303,7 +303,7 @@ function setMonthActiveDays(month) {
 	}).click(function () {
 		var $caption = $('.b-calendar').find('.b-calendar_week_day_flight');
 		$('.b-calendar_week_day_selected').removeClass('b-calendar_week_day_selected');
-		$(this).toggleClass('b-calendar_week_day_selected').append($caption);
+		$(this).addClass('b-calendar_week_day_selected').append($caption);
 		
 		$('.b-popup').fadeIn(333);
 		$('.b-popup_content_date').text(new Date(parseInt($(this).attr('timestamp'))).format('d mmmmm yyyy'));
@@ -423,7 +423,9 @@ $(document).ready(function () {
 		return false;
 	});
 	$('.b-popup_close').click(function () {
+		dropHide();
 		$('.b-popup').fadeOut(333);
+		$('.b-calendar_week_day_selected').removeClass('b-calendar_week_day_selected');
 		return false;
 	});
 	prepareCalendar();
