@@ -155,21 +155,29 @@
 			<form class="b-popup_content_form" method="post">
 				<div class="b-popup_content_form_fieldset">
 					<span class="b-formfield b-popup_content_form_from">
-						<select name="from">
-							<option>Москва</option>
-							<option>Самара</option>
-							<option>Санкт-Петербург</option>
-							<option>Урюпинск под Усть-Подольском</option>
-						</select>
+						<span class="b-formfield_select">
+							<select name="from">
+								<option>Москва</option>
+								<option>Самара</option>
+								<option>Санкт-Петербург</option>
+								<option>Урюпинск под Усть-Подольском</option>
+							</select>
+							<span class="b-formfield_select_content"></span>
+							<span class="b-formfield_select_icon"><i></i></span>
+						</span>
 					</span>
 					<i class="b-popup_content_form_direction"></i>
 					<span class="b-formfield b-popup_content_form_to">
-						<select name="to">
-							<option>Доминикана</option>
-							<option>Мексика</option>
-							<option>Комбожда</option>
-							<option>о. Средиземный Константинопольский</option>
-						</select>
+						<span class="b-formfield_select">
+							<select name="to">
+								<option>Доминикана</option>
+								<option>Мексика</option>
+								<option>Комбожда</option>
+								<option>о. Средиземный Константинопольский</option>
+							</select>
+							<span class="b-formfield_select_content"></span>
+							<span class="b-formfield_select_icon"><i></i></span>
+						</span>
 					</span>
 				</div>
 				<div class="b-popup_content_form_fieldset">
@@ -178,7 +186,7 @@
 					<label><span class="b-formfield"><input class="b-popup_content_form_kid" type="text" maxlength="1" value="0" name="kid" /></span> детей</label>
 				</div>
 				<div class="b-popup_content_form_fieldset b-popup_content_form_fieldset_center">
-					<input type="submit" class="b-popup_content_form_submit" value="Найти тур" />
+					<a onclick="$(this).closest('form').submit();return false;" href="#" class="b-popup_content_form_submit"><span>Найти тур</span><i></i><u></u></a>
 				</div>
 			</form>
 		</div>
