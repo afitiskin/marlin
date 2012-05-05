@@ -129,7 +129,7 @@ p {margin-bottom: 15px;}
 	.b-contactphone_prefix {font-size: 12px;margin: 0 15px 0 0;}
 
 
-.b-header {color: #ed056a;text-align: center;position: relative;padding: 25px 100px 40px 205px;}
+.b-header {color: #ed056a;text-align: center;position: relative;padding: 25px 90px 40px 205px;}
 
 .b-logo {position: absolute;top: 0;left: 8px;display: block;width: 160px;height: 89px;background: url(../images/sprite.png) no-repeat 0 0;text-decoration: none;}
 	.b-logo_alt {visibility: hidden;}
@@ -197,9 +197,9 @@ p {margin-bottom: 15px;}
 			.b-calendar_week_day_selected {cursor: default;color: #fff;background: #ed1e79!important;font-weight: bold;}
 
 
-			.b-calendar_week_day_caption {display: none;position: absolute;width: 70px;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;}
+			.b-calendar_week_day_caption {display: none;color: #29364A;position: absolute;width: 70px;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;}
 				.b-calendar_week_day_hover .b-calendar_week_day_caption {display: block;}
-			.b-calendar_week_day_flight {display: none;position: absolute;width: 90px;overflow: hidden;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;white-space: nowrap;letter-spacing: -1px;}
+			.b-calendar_week_day_flight {display: none;position: absolute;width: 90px;overflow: hidden;top: 7px;left: 10px;font-size: 10px;line-height: 11px;text-transform: uppercase;text-align: left;white-space: nowrap;}
 				.ie7 .b-calendar_week_day_flight {letter-spacing: 0;}
 				.ie7 .b-calendar_week_day_flight, .ie8 .b-calendar_week_day_flight {zoom: 1;}
 			
@@ -280,7 +280,7 @@ p {margin-bottom: 15px;}
 .b-popup {width: 440px;padding: 10px;top: 150px;left: 50%;margin: 0 0 0 -230px;position: absolute;z-index: 1000;background: rgba(0, 0, 0, .2);}
 	.ie7 .b-popup, .ie8 .b-popup {background: url(../images/bg_popup.png);}
 			
-	.b-popup_content {background: #c6d3e3;border: 1px solid #8794a6;padding: 20px;}
+	.b-popup_content {background: #c6d3e3;border: 1px solid #8794a6;padding: 16px 16px 20px 19px;}
 		.b-popup_content_date {text-align: center;font-size: 15px;line-height: 16px;}
 		.b-popup_content_date_caption {text-align: center;font-size: 9px;line-height: 11px;color: #374963;font-style: italic;text-transform: uppercase;}
 		
@@ -288,22 +288,24 @@ p {margin-bottom: 15px;}
 			.b-popup_content_form label {white-space: nowrap;margin-right: 20px;}
 			.b-popup_content_form input[type="text"] {text-align: center;}
 			.b-popup_content_form select {display: none;}
-			.b-popup_content_form input[type="text"], .b-formfield_select {color: #29364a;font-size: 15px;line-height: 16px;border: 1px solid #748193;background: #fff;padding: 4px 8px 4px 6px;}
+			.b-popup_content_form input[type="text"], .b-formfield_select {color: #29364a;font-size: 15px;line-height: 16px;border: 1px solid #748193;background: #fff;padding: 4px 8px 4px 8px;}
 			
-			.b-popup_content_form_fieldset {margin: 20px 0 0;text-align: left;}
+			.b-popup_content_form_fieldset {margin: 16px 0 0;text-align: left;}
 				.b-popup_content_form_fieldset_center {text-align: center;}
 			
-				.b-popup_content_form_from {}
-				.b-popup_content_form_direction {display: inline-block;margin: 0 10px;position: relative;top: 7px;width: 27px;height: 26px;background: url(../images/sprite.png) -69px -89px;}
+				.b-popup_content_form_from {padding: 3px!important;}
+				.b-popup_content_form_direction {display: inline-block;margin: 0 6px;position: relative;top: 7px;width: 27px;height: 26px;background: url(../images/sprite.png) -69px -89px;}
 					.ie7 .b-popup_content_form_direction, .ie8 .b-popup_content_form_direction {top: -2px;}
 				
-				.b-popup_content_form_to {}
-				.b-popup_content_form_days {width: 20px;}
+				.b-popup_content_form_to {padding: 3px!important;}
+				.b-popup_content_form_days {width: 20px;padding-left: 6px!important;}
+					.b-popup_content_form_days_field {margin: 0 1px 0 3px;}
 				.b-popup_content_form_adult {width: 10px;}
+					.b-popup_content_form_adult_label {margin: 0 24px 0 -2px!important;}
 				.b-popup_content_form_kid {width: 10px}
-				.b-popup_content_form_submit {font-size: 14px;line-height: 14px;font-weight: bold;color: #333333;text-decoration: none;padding: 1px;display: block;width: 120px;margin: 0 auto;position: relative;}
-					.b-popup_content_form_submit span {background: #b0bbc9;padding: 5px 20px 7px;display: block;}
-					.b-popup_content_form_submit i {background: #838c96;display: block;position: absolute;bottom: 1px;left: 1px;width: 120px;height: 2px;}
+				.b-popup_content_form_submit {font-size: 14px;line-height: 14px;font-weight: bold;color: #333333;text-decoration: none;padding: 1px;display: block;width: 114px;margin: 0 auto;position: relative;}
+					.b-popup_content_form_submit span {background: #b0bbc9;padding: 4px 17px 11px;display: block;}
+					.b-popup_content_form_submit i {background: #838c96;display: block;position: absolute;bottom: 1px;left: 1px;width: 114px;height: 3px;}
 					
 					.b-popup_content_form_submit:hover {color: #333333;}
 						.b-popup_content_form_submit:hover u {display: block;position: absolute;width: 100%;height: 100%;border: 4px solid #dde5ee;top: -4px;left: -4px;}
@@ -322,26 +324,29 @@ p {margin-bottom: 15px;}
 				}
 			
 			
-			.b-formfield {display: inline-block;padding: 3px;background: #a7b4c4;}
+			.b-formfield {display: inline-block;padding: 2px 3px;background: #a7b4c4;}
 				.ie7 .b-formfield {display: inline;position: relative;top: 5px;}
 				
 				.b-formfield:hover, .b-formfield_focus {background: #dde5ee;}
 				.b-formfield_active, .b-formfield_active:hover {background: #dde5ee;}
 			
-				.b-formfield_select {display: block;position: relative;width: 149px;position: relative;cursor: pointer;}
-					.b-formfield_select_content {white-space: nowrap;display: block;overflow: hidden;position: relative;z-index: 1;width: 129px;}
-					.b-formfield_select_icon {display: block;position: absolute;z-index: 2;right: 0;top: 0;width: 27px;height: 26px;border-left: 1px solid #748193;}
+				.b-formfield_select {display: block;width: 151px;position: relative;cursor: pointer;text-transform: uppercase;padding: 5px 9px!important;}
+					.b-formfield_select_content {white-space: nowrap;display: block;overflow: hidden;position: relative;z-index: 1;width: 133px;}
+					.b-formfield_select_icon {display: block;position: absolute;z-index: 2;right: 0;top: 0;width: 27px;height: 100%;border-left: 1px solid #748193;}
 						.b-formfield_select_icon i {display: block;position: absolute;background: url(../images/sprite.png) no-repeat -49px -93px;width: 7px;height: 4px;top: 11px;left: 10px;}
+						.b-formfield_active .b-formfield_select_icon i {background-position: -49px -97px;}
 			
-					.b-formfield_select_list {display: none;position: absolute;padding: 0 3px 3px;background: #dde5ee;margin: 0;z-index: 2000;}
+					.b-formfield_select_list {display: none;position: absolute;padding: 0 3px 3px;background: #dde5ee;margin: 0;z-index: 2000;text-transform: uppercase;}
 						.ie7 .b-formfield_select_list, .ie8 .b-formfield_select_list {zoom: 1;}
 					
-						.b-formfield_select_list ul {border: 1px solid #748193;border-top: none;background: #fff;width: 163px;color: #29364a;font-size: 15px;line-height: 16px;max-height: 185px;overflow-y: scroll;}
-							.b-formfield_select_list ul li {padding: 4px 0;margin: 0 8px 0 6px;white-space: nowrap;overflow: hidden;cursor: pointer;}
+						.b-formfield_select_list ul {border: 1px solid #748193;border-top: none;background: #fff;width: 169px;color: #29364a;font-size: 15px;line-height: 16px;max-height: 185px;overflow-y: scroll;padding: 1px 0 0;}
+							.b-formfield_select_list ul li {padding: 4px 0;margin: 4px 8px 0 6px;white-space: nowrap;overflow: hidden;cursor: pointer;}
 								.b-formfield_select_list ul li:hover {color: #c6d3e3;}
 								.b-formfield_select_list ul li.b-formfield_select_list_selected {color: #ed1e79;}
 
-	.b-popup_close {display: block;position: absolute;top: 21px;right: 21px;width: 12px;height: 10px;background: url(../images/sprite.png) no-repeat -57px -89px;}
-
+	.b-popup_close {display: block;position: absolute;top: 16px;right: 15px;border: 1px solid transparent;padding: 3px;}
+		.b-popup_close i {display: block;width: 12px;height: 10px;background: url(../images/sprite.png) no-repeat -57px -89px;position: relative;}
+	.b-popup_close:hover {border: 1px solid #b9c2cd;background: #fff;}
+		.b-popup_close:hover u {display: block;width: 100%;height: 100%;position: absolute;border: 3px solid #dde5ee;padding: 1px;top: -4px;left: -4px;}
 			
 			

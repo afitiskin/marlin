@@ -289,6 +289,30 @@ Date.prototype.format = function (mask, utc) {
 	return dateFormat(this, mask, utc);
 };
 
+function setCount(e) {
+	if ( (e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) ) {
+	} else {
+		switch (e.keyCode) {
+			case 37:
+				this.value = (this.value > 0) ? parseInt(this.value) - 1 : 0;
+			break;
+			case 38:
+				this.value = (this.value > 8) ? this.value : parseInt(this.value) + 1;
+			break;
+			case 39:
+				this.value = (this.value > 8) ? this.value : parseInt(this.value) + 1;
+			break;
+			case 40:
+				this.value = (this.value > 0) ? parseInt(this.value) - 1 : 0;
+			break;
+			default:
+				this.value = '';
+			break;
+		}
+		
+	}
+}
+
 function setMonthActiveDays(month) {
 	$('.b-calendar_week_day').removeClass('b-calendar_week_day_other');
 	$('.b-i-calendar').find('.b-calendar_week_day:not(.js-month_' + month + ', .b-calendar_week_day_inactive)').addClass('b-calendar_week_day_other');
@@ -494,6 +518,7 @@ $(document).ready(function () {
 				return false;
 			});
 		});
+		$('.js-field_count').keyup(setCount);
 		$(document).click(dropHide);
 	}
 })
