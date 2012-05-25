@@ -280,6 +280,7 @@ p {margin-bottom: 15px;}
 
 select {display: none;}
 input[type="text"], .b-formfield_select {color: #29364a;font-size: 15px;line-height: 16px;border: 1px solid #748193;background: #fff;padding: 4px 8px 4px 8px;font-family: 'Segoe UI', arial, sans-serif;}
+input[type="text"] {outline: 0;}
 			
 .b-popup {width: 440px;padding: 10px;top: 150px;left: 50%;margin: 0 0 0 -230px;position: absolute;z-index: 1000;background: rgba(0, 0, 0, .2);}
 	.ie7 .b-popup, .ie8 .b-popup {background: url(../images/bg/000000-0.2.png);}
@@ -326,13 +327,18 @@ input[type="text"], .b-formfield_select {color: #29364a;font-size: 15px;line-hei
 				}
 			
 			
-			.b-formfield {display: inline-block;padding: 1px 3px;background: #a7b4c4;}
+			.b-formfield {display: inline-block;padding: 3px 3px;background: #a7b4c4;}
+			@media screen and (-webkit-min-device-pixel-ratio:0) {
+				.b-formfield {padding: 1px 3px;}
+				.b-formfield_select {margin: 2px 0;}
+			}
+				
 				.ie7 .b-formfield {display: inline;position: relative;top: 5px;}
 				
 				.b-formfield:hover, .b-formfield_focus {background: #dde5ee;}
 				.b-formfield_active, .b-formfield_active:hover {background: #dde5ee;}
 			
-				.b-formfield_select {display: block;width: 151px;position: relative;cursor: pointer;text-transform: uppercase;padding: 5px 9px!important;margin: 2px 0;}
+				.b-formfield_select {display: block;width: 151px;position: relative;cursor: pointer;text-transform: uppercase;padding: 6px 9px 6px!important;}
 					.b-formfield_select_content {white-space: nowrap;display: block;overflow: hidden;position: relative;z-index: 1;width: 133px;}
 					.b-formfield_select_icon {display: block;position: absolute;z-index: 2;right: 0;top: 0;width: 27px;height: 100%;border-left: 1px solid #748193;}
 						.b-formfield_select_icon i {display: block;position: absolute;background: url(../images/sprite.png) no-repeat -49px -93px;width: 7px;height: 4px;top: 11px;left: 10px;}
