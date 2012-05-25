@@ -594,6 +594,25 @@ $(document).ready(function () {
 		var e = event ? event : e;
 		var value = Math.ceil(e.offsetX / ($(this).innerWidth() / 5));
 		var old = $(this).attr('value');
+		if ($(this).hasClass('b-search_form_filters_stars_start')) {
+			var max = parseInt($(this).siblings('.b-search_form_filters_stars_end').attr('value'));
+			value = value > max ? max : value;
+		} else {
+			var min = parseInt($(this).siblings('.b-search_form_filters_stars_start').attr('value'));
+			value = value < min ? min : value;
+		}
 		$(this).attr('value', value).find('.b-search_form_filters_stars_' + old).removeClass('b-search_form_filters_stars_' + old).addClass('b-search_form_filters_stars_' + value);
 	});
+	
+	$('.b-search_form_direction_edit_button').click(function () {
+		$('.b-search_form_filters, .b-search_form_direction').slideUp(333);
+		$('.b-search_form_set').slideDown(333);
+		return false;
+	});
+	$('.b-search_form_set_cancel').click(function () {
+		$('.b-search_form_filters, .b-search_form_direction').slideDown(333);
+		$('.b-search_form_set').slideUp(333);
+		return false;
+	});
+	
 })
