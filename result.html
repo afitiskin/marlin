@@ -64,7 +64,7 @@
 										&mdash;
 										<span class="b-formfield b-search_form_filters_price_end"><input type="text" value="100 000" name="price_end" /></span>
 										
-										<span class="b-search_form_filters_price_range">
+										<div class="b-search_form_filters_price_range">
 											<span style="left: 0;" class="b-search_form_filters_price_range_item b-search_form_filters_price_range_item_start">
 												<span class="b-search_form_filters_price_range_item_value">30 000</span>
 												<i></i>
@@ -73,7 +73,7 @@
 												<span class="b-search_form_filters_price_range_item_value">100 000</span>
 												<i></i>
 											</span>
-										</span>
+										</div>
 									</dd>
 									<dd>
 										<span class="b-formfield b-search_form_filters_price_currency">
@@ -102,7 +102,7 @@
 								<dl class="b-search_form_filters_item">
 									<dt>Тип питания</dt>
 									<dd>
-										<span class="b-formfield">
+										<span class="b-formfield b-search_form_filters_food">
 											<span class="b-formfield_select">
 												<select name="from">
 													<option>Все возможные</option>
@@ -238,12 +238,12 @@
 										<div class="b-card_personal_data_phone">
 											<label class="b-card_personal_data_caption">Телефон</label>
 											<label class="b-card_personal_data_notice">+7 111 222 33 44</label>
-											<span class="b-formfield"><input class="b-card_personal_data_field" type="text" value="+7 917 016 88 33" name="user[phone][]" /></span>
+											<span class="b-formfield"><input class="b-card_personal_data_field" type="tel" value="+7 917 016 88 33" name="user[phone][]" /></span>
 										</div>
 										<div class="b-card_personal_data_email">
 											<label class="b-card_personal_data_caption">Электронная почта</label>
 											<label class="b-card_personal_data_notice">adult@porntube.com</label>
-											<span class="b-formfield"><input class="b-card_personal_data_field" type="text" value="spam@mail.ru" name="user[email][]" /></span>
+											<span class="b-formfield"><input class="b-card_personal_data_field" type="email" value="spam@mail.ru" name="user[email][]" /></span>
 										</div>
 									</div>
 									<div class="b-card_personal_data">
@@ -273,12 +273,12 @@
 										<div class="b-card_personal_data_phone">
 											<label class="b-card_personal_data_caption">Телефон</label>
 											<label class="b-card_personal_data_notice">+7 111 222 33 44</label>
-											<span class="b-formfield"><input class="b-card_personal_data_field" type="text" value="" name="user[phone][]" /></span>
+											<span class="b-formfield"><input class="b-card_personal_data_field" type="tel" value="" name="user[phone][]" /></span>
 										</div>
 										<div class="b-card_personal_data_email">
 											<label class="b-card_personal_data_caption">Электронная почта</label>
 											<label class="b-card_personal_data_notice">adult@porntube.com</label>
-											<span class="b-formfield"><input class="b-card_personal_data_field" type="text" value="" name="user[email][]" /></span>
+											<span class="b-formfield"><input class="b-card_personal_data_field" type="email" value="" name="user[email][]" /></span>
 										</div>
 									</div>
 									<div class="b-card_header">Билеты на самолет</div>
@@ -328,13 +328,8 @@
 									</div>
 									<div class="b-card_summary">
 										<a onclick="$(this).closest('form').submit();return false;" href="#" class="b-card_summary_submit g-gradient"><span>Забронировать тур</span><i></i><u></u></a>
-										<div class="b-card_summary_notice">
-											После отправки данных наш менеджер проверит актуальность предложения, забронирует тур и свяжется с вами. Оплатить вы сможете наличными у нас в офисе или курьеру.
-										</div>
-										<div class="b-card_summary_credit">
-											Скоро можно будет оплатить кредитной картой
-											<i class="b-card_summary_credit_icon"></i>
-										</div>
+										<div class="b-card_summary_notice">После отправки данных наш менеджер проверит актуальность предложения, забронирует тур и свяжется с вами. Оплатить вы сможете наличными у нас в офисе или курьеру.</div>
+										<div class="b-card_summary_credit">Скоро можно будет оплатить кредитной картой<i class="b-card_summary_credit_icon"></i></div>
 									</div>
 								</form>
 								<div class="b-search_result_item_form_bottom"><a></a><b></b><i></i><u></u><s></s></div>
