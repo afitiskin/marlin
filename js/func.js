@@ -510,7 +510,8 @@ $(document).ready(function () {
    
 					fdrop.css({left:0,top:0}).show().css({
 						left: o.parent().offset().left,
-						top: o.offset().top + o.outerHeight() - fdrop.offset().top
+						top: o.offset().top + o.outerHeight() - fdrop.offset().top,
+						width: o.innerWidth()
 					});
 
 				}
@@ -521,4 +522,78 @@ $(document).ready(function () {
 		$('.js-field_count').keyup(setCount);
 		$(document).click(dropHide);
 	}
+	
+	$('.b-search_result_item .b-search_result_col').click(function () {
+		var obj = $(this).parent('.b-search_result_item');
+		var form = $('.b-search_result_item_form');
+		
+		if ($(obj).hasClass('b-search_result_item_selected')) {
+			$(form).slideUp(333, function () {
+				$(obj).removeClass('b-search_result_item_selected');
+			});
+		} else {
+			if ($('.b-search_result_item_selected').length) {
+				$(form).slideUp(333, function () {
+					$('.b-search_result_item_selected').removeClass('b-search_result_item_selected');
+					$(obj).append(form).addClass('b-search_result_item_selected');
+					$(form).slideDown(333);
+				});
+			} else {
+				$(obj).append(form).addClass('b-search_result_item_selected');
+				$(form).slideDown(333);
+				
+			}
+		}
+	});
+	
+	$('input', '.b-card_personal_data').each(function (i, e) {
+		$(e).attr('id', 'field' + i);
+		switch (e.type) {
+			case 'checkbox':
+				$(e).parent('label').attr('for', 'field' + i);
+			break;
+			case 'text':
+				$(e).parent().siblings('label').attr('for', 'field' + i);
+			break;
+		}
+	});
+	
+	$('.b-card_personal_data_item', '.b-card_personal_data_sex').click(function () {
+		if ($(this).hasClass('b-card_personal_data_item_selected')) {
+			return;
+		}
+		$(this).closest('.b-card_personal_data_sex').find('.b-card_personal_data_item_selected').removeClass('b-card_personal_data_item_selected');
+		$(this).addClass('b-card_personal_data_item_selected');
+	});
+	$('.b-card_flight_data_item', '.b-card_flight_data_block').click(function () {
+		if ($(this).hasClass('b-card_flight_data_item_selected') || $(this).hasClass('b-card_flight_data_item_disabled')) {
+			return;
+		}
+		$(this).closest('.b-card_flight_data_block').find('.b-card_flight_data_item_selected').removeClass('b-card_flight_data_item_selected');
+		$(this).addClass('b-card_flight_data_item_selected');
+	});
+	$('.b-formfield .b-card_personal_data_field').change(function () {
+		if ($(this).val()) {
+			$(this).parent().siblings('.b-card_personal_data_caption').hide();
+		} else {
+			$(this).parent().siblings('.b-card_personal_data_caption').show();
+		}
+	}).blur(function () {
+		if (!$(this).val()) {
+			$(this).parent().siblings('.b-card_personal_data_caption').show();
+		}
+	}).keyup(function () {
+		if ($(this).val()) {
+			$(this).parent().siblings('.b-card_personal_data_caption').hide();
+		} else {
+			$(this).parent().siblings('.b-card_personal_data_caption').show();
+		}
+	}).change();
+	
+	$('.b-search_form_filters_stars').click(function (e) {
+		var e = event ? event : e;
+		var value = Math.ceil(e.offsetX / ($(this).innerWidth() / 5));
+		var old = $(this).attr('value');
+		$(this).attr('value', value).find('.b-search_form_filters_stars_' + old).removeClass('b-search_form_filters_stars_' + old).addClass('b-search_form_filters_stars_' + value);
+	});
 })
