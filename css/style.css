@@ -295,11 +295,9 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 			.b-popup_content_form_fieldset {margin: 16px 0 0;text-align: left;}
 				.b-popup_content_form_fieldset_center {text-align: center;}
 			
-				.b-popup_content_form_from {padding: 3px!important;}
 				.b-popup_content_form_direction {display: inline-block;margin: 0 6px;position: relative;top: 7px;width: 27px;height: 26px;background: url(../images/sprite.png) -69px -89px;}
 					.ie7 .b-popup_content_form_direction, .ie8 .b-popup_content_form_direction {top: -2px;}
 				
-				.b-popup_content_form_to {padding: 3px!important;}
 				.b-popup_content_form_days {width: 20px;padding-left: 6px!important;}
 					.b-popup_content_form_days_field {margin: 0 1px 0 3px;}
 				.b-popup_content_form_adult {width: 10px;}
@@ -349,7 +347,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 					.b-formfield_select_list {display: none;position: absolute;padding: 0 3px 3px;background: #dde5ee;margin: 0;z-index: 2000;text-transform: uppercase;}
 						.ie7 .b-formfield_select_list, .ie8 .b-formfield_select_list {zoom: 1;}
 					
-						.b-formfield_select_list ul {border: 1px solid #748193;border-top: none;background: #fff;width: 100%;color: #29364a;font-size: 15px;line-height: 16px;max-height: 185px;overflow-y: scroll;padding: 1px 0 0;}
+						.b-formfield_select_list ul {border: 1px solid #748193;border-top: none;background: #fff;color: #29364a;font-size: 15px;line-height: 16px;max-height: 185px;overflow-y: scroll;padding: 1px 0 0;}
 							.b-formfield_select_list ul li {padding: 4px 0;margin: 4px 8px 0 6px;white-space: nowrap;overflow: hidden;cursor: pointer;}
 								.b-formfield_select_list ul li:hover {color: #c6d3e3;}
 								.b-formfield_select_list ul li.b-formfield_select_list_selected {color: #ed1e79;}
@@ -392,7 +390,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 						.ie7 .b-search_form_set_submit {top: 10px;} 
 					.b-search_form_set_cancel {font-size: 12px;color: #29364a;text-decoration: none;border-bottom: 1px dotted;margin-left: 10px;}
 			
-		.b-search_form_filters {border-top: 1px solid #868d99;background: rgba(255, 255, 255, .60);padding: 6px 10px 20px 10px;overflow: hidden;}
+		.b-search_form_filters {border-top: 1px solid #868d99;background: rgba(255, 255, 255, .60);padding: 6px 10px 20px 10px;}
 			.ie7 .b-search_form_filters, .ie8 .b-search_form_filters {background: url(../images/bg/ffffff-0.60.png);}
 				
 			.b-search_form_filters_item {float: left;margin: 0 50px 0 0;}
@@ -416,17 +414,18 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 				.ie7 .b-search_form_filters_price_range {display: none;}
 				.ie8 .b-search_form_filters_price_range {font-size: 1px;line-height: 1px;}
 			
-				.b-search_form_filters_price_range_item {position: absolute;top: -5px;font-size: 9px;width: 5px;height: 11px;cursor: pointer;s}
+				.b-search_form_filters_price_range_item {color: #29364A;position: absolute;top: -5px;font-size: 9px;width: 5px;height: 11px;cursor: pointer;s}
+					.b-search_form_filters_price_range_item:hover {color: #29364A;}
 					.b-search_form_filters_price_range_item_value {top: 7px;position: absolute;white-space: nowrap;}
 					.ie8 .b-search_form_filters_price_range_item_value {top: 17px;}
 					.b-search_form_filters_price_range_item i {background: #29364a;border-top: 5px solid #29364a;border-bottom: 5px solid #29364a;height: 1px;width: 5px;display: block;position: absolute;top: 0;}
 					
 					.b-search_form_filters_price_range_item_start {margin-left: -5px;}
 						.b-search_form_filters_price_range_item_start i {border-radius: 5px 0 0 5px;left: 0;}
-						.b-search_form_filters_price_range_item_start .b-search_form_filters_price_range_item_value {left: 0;}
+						.b-search_form_filters_price_range_item_start .b-search_form_filters_price_range_item_value {right: 100%;margin-right: -5px;}
 					.b-search_form_filters_price_range_item_end {margin-right: -5px;}
 						.b-search_form_filters_price_range_item_end i {border-radius: 0 5px 5px 0;right: 0;}
-						.b-search_form_filters_price_range_item_end .b-search_form_filters_price_range_item_value {right: 0;}
+						.b-search_form_filters_price_range_item_end .b-search_form_filters_price_range_item_value {left: 100%;margin-left: -5px;}
 				
 			.b-search_form_filters_stars {display: inline-block;zoom: 1;width: 69px; height: 12px;background: url(../images/sprite.png) no-repeat -248px -105px;cursor: pointer;}
 				.ie7 .b-search_form_filters_stars {margin-right: 5px;position: relative;top: -3px;}
@@ -554,7 +553,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 			
 	.b-card_header {font-size: 18px;padding: 2px 0 15px;}
 	.b-card_personal_data {overflow: hidden;margin: 0 0 10px;height: 50px;}
-		.b-card_personal_data_caption {position: absolute;font-size: 15px;top: 9px;left: 13px;display: none;cursor: text;}
+		.b-card_personal_data_caption {position: absolute;font-size: 15px;top: 9px;left: 13px;display: none;cursor: text;color: #ABB7C4}
 			.ie7 .b-card_personal_data_caption {top: 13px;zoom: 1;z-index: 2;}
 			.ie8 .b-card_personal_data_caption {top: 6px;zoom: 1;z-index: 2;}
 		.b-card_personal_data_notice {position: absolute;font-size: 11px;font-style: italic;top: 35px;left: 13px;}
@@ -601,7 +600,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="number"]
 		.b-card_flight_data_first {padding-left: 38px;margin-right: 18px;}
 		.b-card_flight_data_second {padding-left: 67px;}
 				
-	.b-card_summary {font-size: 11px;font-style: italic;color: #4e596a;line-height: 16px;border-top: 1px solid #adbaca;margin: 10px -10px 0;padding: 9px 10px 0;overflow: hidden;}
+	.b-card_summary {font-size: 11px;font-style: italic;color: #4e596a;line-height: 16px;border-top: 1px solid #adbaca;margin: 10px -10px 0;padding: 9px 10px 5px;overflow: hidden;}
 		.ie7 .b-card_summary {font-style: normal;}
 		.b-card_summary_submit {width: 158px;float: left;font-style: normal;font-size: 14px;line-height: 14px;font-weight: bold;color: #333333;text-decoration: none;padding: 1px;display: block;position: relative;}
 			.b-card_summary_submit span {background: #b0bbc9;padding: 4px 10px 11px;display: block;}

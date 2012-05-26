@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="css/fotorama.css?v=1.0" type="text/css" />
 	<link rel="stylesheet" href="css/style.css?v=1.0" type="text/css" />
 
-	<script type="text/javascript"src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.20.min.js"></script>
 	<script type="text/javascript" src="js/fotorama.js"></script>
 	<script type="text/javascript" src="js/func.js"></script>
 	
@@ -119,20 +120,11 @@
 								<dl class="b-search_form_filters_item">
 									<dt>Стоимость</dt>
 									<dd>
-										<span class="b-formfield b-search_form_filters_price_start"><input type="text" value="30 000" name="price_start" /></span>
+										<span class="b-formfield b-search_form_filters_price b-search_form_filters_price_start"><input type="text" value="30000" name="price_start" /></span>
 										&mdash;
-										<span class="b-formfield b-search_form_filters_price_end"><input type="text" value="100 000" name="price_end" /></span>
+										<span class="b-formfield b-search_form_filters_price b-search_form_filters_price_end"><input type="text" value="100000" name="price_end" /></span>
 										
-										<div class="b-search_form_filters_price_range">
-											<span style="left: 0;" class="b-search_form_filters_price_range_item b-search_form_filters_price_range_item_start">
-												<span class="b-search_form_filters_price_range_item_value">30 000</span>
-												<i></i>
-											</span>
-											<span style="left: 100%;" class="b-search_form_filters_price_range_item b-search_form_filters_price_range_item_end">
-												<span class="b-search_form_filters_price_range_item_value">100 000</span>
-												<i></i>
-											</span>
-										</div>
+										<div class="b-search_form_filters_price_range"></div>
 									</dd>
 									<dd>
 										<span class="b-formfield b-search_form_filters_price_currency">
@@ -175,6 +167,7 @@
 										</span>
 									</dd>
 								</dl>
+								<div class="clear"></div>
 							</div>
 						</div>
 						<div class="b-search_result">
@@ -301,21 +294,21 @@
 										</div>
 										<div class="b-card_personal_data_email">
 											<label class="b-card_personal_data_caption">Электронная почта</label>
-											<label class="b-card_personal_data_notice">adult@porntube.com</label>
-											<span class="b-formfield"><input class="b-card_personal_data_field" type="email" value="spam@mail.ru" name="user[email][]" /></span>
+											<label class="b-card_personal_data_notice">givemetotrip@rozovymarlin.ru</label>
+											<span class="b-formfield"><input class="b-card_personal_data_field" type="email" value="konstantinovich@yandex.ru" name="user[email][]" /></span>
 										</div>
 									</div>
 									<div class="b-card_personal_data">
 										<div class="b-card_personal_data_sex">
 											<span class="b-card_personal_data_caption">Пол</span>
-											<label class="b-card_personal_data_item b-card_personal_data_item_selected" title="Мужской">
+											<label class="b-card_personal_data_item" title="Мужской">
 												<i class="b-card_personal_data_icon b-card_personal_data_icon_male"></i>
-												<input checked="checked" class="b-card_personal_data_field" type="radio" name="user[sex][]" value="male" />
+												<input class="b-card_personal_data_field" type="radio" name="user[sex][]" value="male" />
 												<span class="b-card_personal_data_value">Мужской</span>
 											</label>
-											<label class="b-card_personal_data_item" title="Женский">
+											<label class="b-card_personal_data_item b-card_personal_data_item_selected" title="Женский">
 												<i class="b-card_personal_data_icon b-card_personal_data_icon_female"></i>
-												<input class="b-card_personal_data_field" type="radio" name="user[sex][]" value="female" />
+												<input checked="checked" class="b-card_personal_data_field" type="radio" name="user[sex][]" value="female" />
 												<span class="b-card_personal_data_value">Женский</span>
 											</label>
 										</div>
@@ -336,7 +329,7 @@
 										</div>
 										<div class="b-card_personal_data_email">
 											<label class="b-card_personal_data_caption">Электронная почта</label>
-											<label class="b-card_personal_data_notice">adult@porntube.com</label>
+											<label class="b-card_personal_data_notice">givemetotrip@rozovymarlin.ru</label>
 											<span class="b-formfield"><input class="b-card_personal_data_field" type="email" value="" name="user[email][]" /></span>
 										</div>
 									</div>

@@ -511,7 +511,7 @@ $(document).ready(function () {
 					fdrop.css({left:0,top:0}).show().css({
 						left: o.parent().offset().left,
 						top: o.offset().top + o.outerHeight() - fdrop.offset().top,
-						width: o.innerWidth()
+						width: o.parent().width()
 					});
 
 				}
@@ -523,6 +523,7 @@ $(document).ready(function () {
 		$(document).click(dropHide);
 	}
 	
+	/* hide and show form */
 	$('.b-search_result_item .b-search_result_col').click(function () {
 		var obj = $(this).parent('.b-search_result_item');
 		var form = $('.b-search_result_item_form');
@@ -536,16 +537,21 @@ $(document).ready(function () {
 				$(form).slideUp(333, function () {
 					$('.b-search_result_item_selected').removeClass('b-search_result_item_selected');
 					$(obj).append(form).addClass('b-search_result_item_selected');
-					$(form).slideDown(333);
+					$(form).slideDown(333, function () {
+						$('body').stop().animate({scrollTop: $(obj).offset().top}, 1666, 'easeInOutExpo');
+					});
 				});
 			} else {
 				$(obj).append(form).addClass('b-search_result_item_selected');
-				$(form).slideDown(333);
+				$(form).slideDown(333, function () {
+					$('body').stop().animate({scrollTop: $(obj).offset().top}, 1666, 'easeInOutExpo');
+				});
 				
 			}
 		}
 	});
 	
+	/* labels for input fields */
 	$('input', '.b-card_personal_data').each(function (i, e) {
 		$(e).attr('id', 'field' + i);
 		switch (e.type) {
@@ -558,6 +564,7 @@ $(document).ready(function () {
 		}
 	});
 	
+	/* radio buttons (sex and flight type) */
 	$('.b-card_personal_data_item', '.b-card_personal_data_sex').click(function () {
 		if ($(this).hasClass('b-card_personal_data_item_selected')) {
 			return;
@@ -590,6 +597,7 @@ $(document).ready(function () {
 		}
 	}).change();
 	
+	/* search stars */
 	$('.b-search_form_filters_stars').click(function (e) {
 		var e = event ? event : e;
 		var value = Math.ceil(e.offsetX / ($(this).innerWidth() / 5));
@@ -604,6 +612,7 @@ $(document).ready(function () {
 		$(this).attr('value', value).find('.b-search_form_filters_stars_' + old).removeClass('b-search_form_filters_stars_' + old).addClass('b-search_form_filters_stars_' + value);
 	});
 	
+	/* search edit */
 	$('.b-search_form_direction_edit_button').click(function () {
 		$('.b-search_form_filters, .b-search_form_direction').slideUp(333);
 		$('.b-search_form_set').slideDown(333);
@@ -615,4 +624,48 @@ $(document).ready(function () {
 		return false;
 	});
 	
+	
+	/* price inputs and slider */
+	
+	
+	
+	if ($('.b-search_form_filters_price input').length) {
+		document.minPrice = 0;
+		document.maxPrice = 200000;
+
+		$('.b-search_form_filters_price input').change(function () {
+			var value = parseInt($(this).val()) || 0;
+			if ($(this).parent().hasClass('b-search_form_filters_price_start')) {
+				var max = parseInt($(this).closest('dd').find('.b-search_form_filters_price_end input').val());
+				value = value > max ? max : value;
+			} else {
+				var min = parseInt($(this).closest('dd').find('.b-search_form_filters_price_start input').val());
+				value = value < min ? min : value;
+			}
+			value = value < document.minPrice0 ? document.minPrice : value > document.maxPrice ? document.maxPrice : value;
+			$(this).val(value);
+			
+			$('.b-search_form_filters_price_range').slider('values', 0, $('.b-search_form_filters_price_start input').val());
+			$('.b-search_form_filters_price_range').slider('values', 1, $('.b-search_form_filters_price_end input').val());
+			
+			$('.b-search_form_filters_price_range_item_start span').text($('.b-search_form_filters_price_start input').val());
+			$('.b-search_form_filters_price_range_item_end span').text($('.b-search_form_filters_price_end input').val());
+		});
+		
+		$('.b-search_form_filters_price_range').slider({
+			range: true,
+			min: document.minPrice,
+			max: document.maxPrice,
+			values: [$('.b-search_form_filters_price_start input').val(), $('.b-search_form_filters_price_end input').val()],
+			slide: function( event, ui ) {
+				$('.b-search_form_filters_price_start input').val(ui.values[0]);
+				$('.b-search_form_filters_price_end input').val(ui.values[1]);
+				
+				$('.b-search_form_filters_price_range_item_start span').text(ui.values[0]);
+				$('.b-search_form_filters_price_range_item_end span').text(ui.values[1]);
+			}
+		});
+		$('.ui-slider-handle').eq(0).addClass('b-search_form_filters_price_range_item b-search_form_filters_price_range_item_start').html('<span class="b-search_form_filters_price_range_item_value">' + $('.b-search_form_filters_price_start input').val() + '</span><i></i>');
+		$('.ui-slider-handle').eq(1).addClass('b-search_form_filters_price_range_item b-search_form_filters_price_range_item_end').html('<span class="b-search_form_filters_price_range_item_value">' + $('.b-search_form_filters_price_end input').val() + '</span><i></i>');
+	}
 })
